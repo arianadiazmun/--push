@@ -1,51 +1,43 @@
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function Tray ({setSelectedRestaurant}) {
+export default function Tray({ setSelectRestaurant }) {
+  const choose = () => {
+    const chosen = Math.random();
+    setSelectRestaurant(chosen);
+  };
 
-
-const choose= () => {
-    const chosen= Math.random()
-    setSelectedRestaurant(chosen)
-}
-
-    return (
-        <View style={styles.tray}>
-            <TouchableOpacity style={styles.button}>
-       <Text style={styles.buttonText}>Shuffle</Text>
-       </TouchableOpacity>
-        </View>
-    )
+  return (
+    <View style={styles.tray}>
+      <TouchableOpacity onPress={choose} style={styles.button}>
+        <Text style={styles.buttonText}>Shuffle</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-
-button:{
-    backgroundColor:'#b0c4de',
+  button: {
+    backgroundColor: "#b0c4de",
     paddingHorizontal: 24,
     paddingVertical: 8,
     borderRadius: 5,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     borderWidth: 1,
-    borderColor: 'black'
+    borderColor: "black",
+  },
 
-},
-
-buttonText: {
-    color: 'white',
+  buttonText: {
+    color: "white",
     fontSize: 20,
     fontWeight: 800,
+  },
 
-
-},
-
-
-    tray: {
-        width: '100%',
-        backgroundColor:'#e9eeff',
-        height: 70,
-        paddingBottom: 10,
-        alignItems:'center',
-        justifyContent: 'center'
-
-    }
-    })
+  tray: {
+    width: "100%",
+    backgroundColor: "#e9eeff",
+    height: 70,
+    paddingBottom: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

@@ -7,16 +7,16 @@ import Tray from './app/Tray';
 
 export default function App() {
 
-  const [selectRestaurant, setselectRestaurant] = useState(null);
+  const [selectRestaurant, setSelectRestaurant] = useState(null);
   return (
     <>
     <View style={styles.container}>
       <Text style= {styles.header}>Lunch Spot 🌮
       </Text>
-      <RestList/>
+      <RestList selectRestaurant={selectRestaurant}/>
       <StatusBar style="auto" />
     </View>
-    <Tray setselectRestaurant={setselectRestaurant}/>
+    <Tray setSelectRestaurant={setSelectRestaurant}/>
     </>
   );
 }
